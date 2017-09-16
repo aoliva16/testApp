@@ -8,8 +8,10 @@
 
 	$conn = sqlsrv_connect($serverName, $connectionOptions);
 
-	$tsql="SELECT * FROM Expense_Categories";
+	$tsql="SELECT CATEGORY FROM Expense_Categories";
 	$getResults= sqlsrv_query($conn, $tsql);
+
+	echo $getResults
 
 	echo ("Reading data from table" . PHP_EOL);
 	if ($getResults == FALSE)
