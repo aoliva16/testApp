@@ -37,13 +37,15 @@
 	Expense Amount (US$):<br>
 		<input type="email" name="u_email" required><br>
 
-	Expense Category:<br>
+	Message:<br>
+		<input type="text" name="message" required><br>
+
+	<label>Expense Category</label><br>
 		<select name="Fruits">
 		 <?php echo " . $options . " ?>
 	<br>
 
-	Notes (optional):<br>
-		<input type="text" name="message" required><br>
+
 
 <input type="submit" value="Submit"><br>
 </form>
