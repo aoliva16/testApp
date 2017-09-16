@@ -8,8 +8,15 @@
 
 <?php
 
-	require 'connectToDatabase.php';
-	$conn = ConnectToDabase()
+	$serverName = getenv("msSqlServer");
+	$connectionOptions = array(
+		"Database" => getenv("databaseName"),
+		"Uid" => getenv("dbUserName"),
+		"PWD" => getenv("dbPassword")
+	);
+
+	// Connect to Azure SQL Database
+	$conn = sqlsrv_connect($serverName, $connectionOptions);
 
 	// Get data for expense categories
 	$tsql="SELECT CATEGORY FROM Expense_Categories";
@@ -21,13 +28,14 @@
 		$options .="<option>" . $row['CATEGORY'] . "</option>";
 	}
 
+	/*
 	$menu="<form id='filter' name='filter' method='post' action=''>
 	  <p><label>Filter</label></p>
 		<select name='filter' id='filter'>
 		  " . $options . "
 		</select>
 	</form>";
-
+	*/
 	//echo $menu;
 ?>
 
