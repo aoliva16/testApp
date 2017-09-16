@@ -11,6 +11,7 @@
 	$tsql="SELECT CATEGORY FROM Expense_Categories";
 	$getResults= sqlsrv_query($conn, $tsql);
 
+	$options = '';
 	while($row = mysql_fetch_array($getResults)) {
 		$options .="<option>" . $row['CATEGORY'] . "</option>";
 	}
