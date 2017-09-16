@@ -55,7 +55,7 @@
 
 	<label>Fruits</label><br>
 		<select name="Fruits">
-		 " . $options . "
+		 <?php echo " . $options . " ?>
 	<br>
 
 <input type="submit" value="Submit"><br>
