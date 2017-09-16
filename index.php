@@ -14,7 +14,7 @@
 
 	$options = '';
 	while($row = sqlsrv_fetch_array($filter)) {
-		$options .="<option>" . $row['fuel_type'] . "</option>";
+		$options .="<option>" . $row['CATEGORY'] . "</option>";
 	}
 
 	$menu="<form id='filter' name='filter' method='post' action=''>
