@@ -7,5 +7,18 @@
 
 <?php $connStr = getenv("SQLAZURECONNSTR_defaultConnection"); ?>
 <p>SQL connection string: <?php echo $connStr; ?></p>
+
+<?php
+	$connection = odbc_connect($connStr);
+
+
+if ($connection){
+	echo "all OK!"
+}
+else{
+	echo "no good"
+};
+
+?>
 </body>
 </html>
