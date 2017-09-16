@@ -9,7 +9,11 @@
 <p>SQL connection string: <?php echo $connStr; ?></p>
 
 <?php
+
+	echo "attempting connection..."
 	$conn = odbc_connect($connStr);
+
+	
 
 	if (!$conn)
 	  {echo "Connection Failed: " . $conn;}
