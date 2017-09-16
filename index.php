@@ -8,15 +8,11 @@
 
 <?php
 
-	$serverName = getenv("msSqlServer");
-	$connectionOptions = array(
-		"Database" => getenv("databaseName"),
-		"Uid" => getenv("dbUserName"),
-		"PWD" => getenv("dbPassword")
-	);
+	require 'ConnectToDatabase.php';
+
 
 	// Connect to Azure SQL Database
-	$conn = sqlsrv_connect($serverName, $connectionOptions);
+	$conn = ConnectToDabase();
 
 	// Get data for expense categories
 	$tsql="SELECT CATEGORY FROM Expense_Categories";
@@ -27,6 +23,8 @@
 	while($row = sqlsrv_fetch_array($expenseCategories)) {
 		$options .="<option>" . $row['CATEGORY'] . "</option>";
 	}
+
+	sqlsrv_close ($conn);
 ?>
 
 <form action="insertToDb.php" method="post">
@@ -37,17 +35,15 @@
 	Expense Amount (US$):<br>
 		<input type="email" name="u_email" required><br>
 
-	Message:<br>
+	Notes (optional):<br>
 		<input type="text" name="message" required><br>
 
 	<label>Expense Category</label><br>
-		<select name="Fruits">
+		<select name="Expense_Category">
 		 <?php echo " . $options . " ?>
-	<br>
+	
 
-
-
-<input type="submit" value="Submit"><br>
+<br><input type="submit" value="Submit"><br>
 </form>
 </body>
 </html>
