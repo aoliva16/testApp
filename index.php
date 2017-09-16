@@ -28,18 +28,19 @@
 		$options .="<option>" . $row['CATEGORY'] . "</option>";
 	}
 
-	/*
+	
 	$menu="<form id='filter' name='filter' method='post' action=''>
 	  <p><label>Filter</label></p>
 		<select name='filter' id='filter'>
 		  " . $options . "
 		</select>
 	</form>";
-	*/
-	//echo $menu;
+	
+	echo $menu;
 ?>
 
-<form action="thankyou.php" method="post">
+<form action="insertToDb.php" method="post">
+
 	Name:<br>
 		<input type="text" name="u_name" required><br>
  
@@ -55,6 +56,7 @@
 	<label>Fruits</label><br>
 		<select name="Fruits">
 		 " . $options . "
+	<br>
 
 <input type="submit" value="Submit"><br>
 </form>
