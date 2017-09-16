@@ -15,7 +15,7 @@
 <p>Connection: <?php echo $conn; ?></p>
 
 <?php
-	$sql="SELECT * FROM customers";
+	$sql="SELECT * FROM Expense_Categories";
 	$rs=odbc_exec($conn,$sql);
 
 	if (!$rs)
