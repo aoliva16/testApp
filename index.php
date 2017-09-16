@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> Simple PHP contact form with MySQL and Form Validation </title>
+<title> Carlos' Expense Input Tool </title>
 </head>
 <body>
-<h3> Contact US</h3>
+<h3> Input Expense</h3>
 
 <?php
 
 	require 'ConnectToDatabase.php';
-
 
 	// Connect to Azure SQL Database
 	$conn = ConnectToDabase();
@@ -24,26 +23,26 @@
 		$options .="<option>" . $row['CATEGORY'] . "</option>";
 	}
 
+	// Close SQL database connection
 	sqlsrv_close ($conn);
 ?>
 
 <form action="insertToDb.php" method="post">
 
 	Date:<br>
-		<input type="text" name="u_name" required><br>
+		<input type="text" name="input_date" required><br>
  
 	Expense Amount (US$):<br>
-		<input type="email" name="u_email" required><br>
+		<input type="email" name="expense_amount" required><br>
 
 	Notes (optional):<br>
-		<input type="text" name="message" required><br>
+		<input type="text" name="input_note" required><br>
 
 	<label>Expense Category</label><br>
-		<select name="Expense_Category">
-		 <?php echo " . $options . " ?>
+		<select name="expense_category">
+		 <?php echo " . $options . " ?><br>
 	
-
-<br><input type="submit" value="Submit"><br>
+<input type="submit" value="Submit"><br>
 </form>
 </body>
 </html>
