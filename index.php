@@ -3,6 +3,7 @@
 <body>
 
 <?php  
+	$connstr = getenv('SQLAZURECONNSTR_defaultConnection')
 	echo "Hello world"
 ?>
 
