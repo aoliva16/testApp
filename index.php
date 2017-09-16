@@ -5,21 +5,33 @@
 
 <h1>Website node version: <?php echo getenv("WEBSITE_NODE_DEFAULT_VERSION"); ?></h1>
 
-<?php $connStr = getenv("SQLAZURECONNSTR_defaultConnection"); ?>
-<p>SQL connection string: <?php echo $connStr; ?></p>
-
-<p>SQL connection string: <?php echo "attempting connection..."; ?></p>
 <?php
-	$conn = odbc_connect($connStr);
+	$serverName = getenv("msSqlServer");
+	$connectionOptions = array(
+		"Database" => getenv("databaseName"),
+		"Uid" => getenv("dbUserName"),
+		"PWD" => getenv("dbPassword")
+	);
 ?>
+
+
+<?php
+	$conn = sqlsrv_connect($serverName, $connectionOptions);
+?>
+
 <p>Connection: <?php echo $conn; ?></p>
 
 <?php
-	$sql="SELECT * FROM Expense_Categories";
-	$rs=odbc_exec($conn,$sql);
+	$tsql="SELECT * FROM Expense_Categories";
+	$getResults= sqlsrv_query($conn, $tsql);
 
-	if (!$rs)
-		{exit("Error in SQL");}
+	echo ("Reading data from table" . PHP_EOL);
+	if ($getResults == FALSE)
+		echo (sqlsrv_errors());
+	while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+		echo ($row['CATEGORY'] . PHP_EOL);
+	}
+	sqlsrv_free_stmt($getResults);
 ?>
 </body>
 </html>
