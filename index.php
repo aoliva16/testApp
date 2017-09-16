@@ -8,12 +8,13 @@
 
 	$conn = sqlsrv_connect($serverName, $connectionOptions);
 
+	// Select data
 	$tsql="SELECT CATEGORY FROM Expense_Categories";
-	$getResults= sqlsrv_query($conn, $tsql);
+	$filter= sqlsrv_query($conn, $tsql);
 
 	$options = '';
-	while($row = mysql_fetch_array($getResults)) {
-		$options .="<option>" . $row['CATEGORY'] . "</option>";
+	while($row = sqlsrv_fetch_array($filter)) {
+		$options .="<option>" . $row['fuel_type'] . "</option>";
 	}
 
 	$menu="<form id='filter' name='filter' method='post' action=''>
