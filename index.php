@@ -27,36 +27,23 @@
 	while($row = sqlsrv_fetch_array($expenseCategories)) {
 		$options .="<option>" . $row['CATEGORY'] . "</option>";
 	}
-
-	
-	$menu="<form id='filter' name='filter' method='post' action=''>
-	  <p><label>Filter</label></p>
-		<select name='filter' id='filter'>
-		  " . $options . "
-		</select>
-	</form>";
-	
-	echo $menu;
 ?>
 
 <form action="insertToDb.php" method="post">
 
-	Name:<br>
+	Date:<br>
 		<input type="text" name="u_name" required><br>
  
-	Email:<br>
+	Expense Amount (US$):<br>
 		<input type="email" name="u_email" required><br>
- 
-	Subject:<br>
-		<input type="text" name="subj" required><br>
- 
-	Message:<br>
-		<input type="text" name="message" required><br>
 
-	<label>Fruits</label><br>
+	<label>Expense Category</label><br>
 		<select name="Fruits">
 		 <?php echo " . $options . " ?>
 	<br>
+
+	Notes (optional):<br>
+		<input type="text" name="message" required><br>
 
 <input type="submit" value="Submit"><br>
 </form>
