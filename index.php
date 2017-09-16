@@ -33,16 +33,17 @@
 		<input type="text" name="input_date" required><br>
  
 	Expense Amount (US$):<br>
-		<input type="email" name="expense_amount" required><br>
+		<input type="" name="expense_amount" required><br>
 
 	Notes (optional):<br>
 		<input type="text" name="input_note" required><br>
 
 	<label>Expense Category</label><br>
 		<select name="expense_category">
-		 <?php echo " . $options . " ?><br>
-	
-<input type="submit" value="Submit"><br>
+		 <?php echo " . $options . " ?>
+
+	<br><br>
+	<input type="submit" value="Submit"><br>
 </form>
 </body>
 </html>
