@@ -11,12 +11,16 @@
 	$tsql="SELECT CATEGORY FROM Expense_Categories";
 	$getResults= sqlsrv_query($conn, $tsql);
 
-	echo ("Reading data from table");
-	if ($getResults == FALSE)
-		echo (sqlsrv_errors());
-	while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-		echo ($row['CATEGORY']);
-		echo ("\r\n");
+	while($row = mysql_fetch_array($getResults)) {
+		$options .="<option>" . $row['CATEGORY'] . "</option>";
 	}
-	sqlsrv_free_stmt($getResults);
+
+	$menu="<form id='filter' name='filter' method='post' action=''>
+	  <p><label>Filter</label></p>
+		<select name='filter' id='filter'>
+		  " . $options . "
+		</select>
+	</form>";
+
+	echo $menu;
 ?>
