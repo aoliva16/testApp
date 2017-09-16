@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head><title>Accessing App Settings from PHP</title></head>
-<body>
-
-<h1>Website node version: <?php echo getenv("WEBSITE_NODE_DEFAULT_VERSION"); ?></h1>
-
 <?php
 	$serverName = getenv("msSqlServer");
 	$connectionOptions = array(
@@ -12,16 +5,9 @@
 		"Uid" => getenv("dbUserName"),
 		"PWD" => getenv("dbPassword")
 	);
-?>
 
-
-<?php
 	$conn = sqlsrv_connect($serverName, $connectionOptions);
-?>
 
-<p>Connection: <?php echo $conn; ?></p>
-
-<?php
 	$tsql="SELECT * FROM Expense_Categories";
 	$getResults= sqlsrv_query($conn, $tsql);
 
@@ -33,5 +19,3 @@
 	}
 	sqlsrv_free_stmt($getResults);
 ?>
-</body>
-</html>
