@@ -14,5 +14,12 @@
 ?>
 <p>Connection: <?php echo $conn; ?></p>
 
+<?php
+	$sql="SELECT * FROM customers";
+	$rs=odbc_exec($conn,$sql);
+
+	if (!$rs)
+		{exit("Error in SQL");}
+?>
 </body>
 </html>
