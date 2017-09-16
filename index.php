@@ -16,6 +16,7 @@
 		echo (sqlsrv_errors());
 	while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 		echo ($row['CATEGORY']);
+		echo ("\r\n");
 	}
 	sqlsrv_free_stmt($getResults);
 ?>
