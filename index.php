@@ -5,6 +5,7 @@
 
 <h1>Website node version: <?php echo getenv("WEBSITE_NODE_DEFAULT_VERSION"); ?></h1>
 
-<p>SQL connection string: <?php echo getenv("SQLAZURECONNSTR_defaultConnection"); ?></p>
+<?php $connStr = getenv("SQLAZURECONNSTR_defaultConnection"); ?>
+<p>SQL connection string: <?php echo $connStr; ?></p>
 </body>
 </html>
