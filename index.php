@@ -11,21 +11,9 @@
 <?php
 	$conn = odbc_connect($connStr);
 
-	if($conn)
-        echo "Connected!";
+	if (!$conn)
+	  {echo "Connection Failed: " . $conn;}
 
-	$tsql= "SELECT CATEGORY FROM Expense_Categories";
-	
-	$getResults= sqlsrv_query($conn, $tsql);
-
-	echo ("Reading data from table" . PHP_EOL);
-	if ($getResults == FALSE)
-		die(FormatErrors(sqlsrv_errors()));
-	while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-		echo ($row['CATEGORY'] . PHP_EOL);
-
-	}
-	sqlsrv_free_stmt($getResults);
 ?>
 
 
