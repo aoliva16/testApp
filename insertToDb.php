@@ -27,11 +27,16 @@
 
 	$tsql="SELECT CATEGORY FROM Expense_Categories";
 
-	// echo ("$tsql");
+	echo $expenseDay
+	echo $expenseMonth
+	echo $expenseYear
+	echo $expenseAmoun
+	echo $expenseNote
+	echo $expenseCategory
 
 	// Close SQL database connection
 	sqlsrv_close ($conn);
 
-	header("Location: /"); /* Redirect browser to home page */
+	//header("Location: /"); /* Redirect browser to home page */
  
 ?>
