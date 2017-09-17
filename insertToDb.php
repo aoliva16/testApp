@@ -30,20 +30,20 @@
 	$expenseMonthName= $dateObj->format('F'); // March
 
 	// Build SQL query to insert new expense data into SQL database
-	$tsql='INSERT INTO Expenses (ExpenseDay,
+	$tsql="INSERT INTO Expenses (ExpenseDay,
 							     ExpenseMonth,
 								 ExpenseMonthName,
 								 ExpenseYear,
 								 ExpenseCategory,
 								 ExpenseAmount,
 								 Notes)
-			VALUES (' . $expenseDay . ','
-					  . $expenseMonth .','
-					  . $expenseMonthName .','
-					  . $expenseYear .','
-					  . $expenseCategory .','
-					  . $expenseAmount .','
-					  . $expenseNote .')';
+			VALUES ('"$expenseDay"', 
+					'"$expenseMonth"', 
+					'"$expenseMonthName"', 
+					'"$expenseYear"', 
+					'"$expenseCategory"', 
+					'"$expenseAmount"', 
+					'"$expenseNote"')";
 
 	// Run query
 	//$sqlQueryStatus = sqlsrv_query($conn, $tsql);
