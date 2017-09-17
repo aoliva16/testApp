@@ -48,7 +48,7 @@
 	// Run query
 	//$sqlQueryStatus = sqlsrv_query($conn, $tsql);
 
-	echo $tsql
+	echo $tsql;
 
 	/*
 	// Check for errors in SQL query
