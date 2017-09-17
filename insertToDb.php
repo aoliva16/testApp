@@ -37,13 +37,13 @@
 								 ExpenseCategory,
 								 ExpenseAmount,
 								 Notes)
-			VALUES ('"$expenseDay"', 
-					'"$expenseMonth"', 
-					'"$expenseMonthName"', 
-					'"$expenseYear"', 
-					'"$expenseCategory"', 
-					'"$expenseAmount"', 
-					'"$expenseNote"')";
+			VALUES ('" . $expenseDay . "', 
+					'" . $expenseMonth . "', 
+					'" . $expenseMonthName . "', 
+					'" . $expenseYear . "', 
+					'" . $expenseCategory . "', 
+					'" . $expenseAmount . "', 
+					'" . $expenseNote . "')";
 
 	// Run query
 	//$sqlQueryStatus = sqlsrv_query($conn, $tsql);
