@@ -12,7 +12,7 @@
 	require 'ConnectToDatabase.php';
 
 	// Define variables and set to empty values
-	$expenseDay = $expenseMonth = $expenseYear = $expenseAmount = $expenseNote = $expenseCategory = "";
+	$expenseDay = $expenseMonth = $expenseYear = $expenseAmount = $expenseNote = $expenseCategory = NULL;
 
 	// Connect to Azure SQL Database
 	$conn = ConnectToDabase();
@@ -29,19 +29,39 @@
 	$dateObj= DateTime::createFromFormat('!m', $expenseMonth);
 	$expenseMonthName= $dateObj->format('F'); // March
 
-	$tsql="SELECT CATEGORY FROM Expense_Categories";
+	// Build SQL query to insert new expense data into SQL database
+	$tsql='INSERT INTO Expenses (ExpenseDay,
+							     ExpenseMonth,
+								 ExpenseMonthName,
+								 ExpenseYear,
+								 ExpenseCategory,
+								 ExpenseAmount,
+								 Notes)
+			VALUES (' . $expenseDay . ','
+					  . $expenseMonth .','
+					  . $expenseMonthName .','
+					  . $expenseYear .','
+					  . $expenseCategory .','
+					  . $expenseAmount .','
+					  . $expenseNote .')';
 
-	echo $expenseDay;
-	echo $expenseMonth;
-	echo $expenseMonthName;
-	echo $expenseYear;
-	echo $expenseAmount;
-	echo $expenseNote;
-	echo $expenseCategory;
+	// Run query
+	$sqlQueryStatus = sqlsrv_query($conn, $tsql);
+
+	// Check for errors in SQL query
+	if( $sqlQueryStatus === false ) {
+		if( ($errors = sqlsrv_errors() ) != null) {
+			foreach( $errors as $error ) {
+				echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+				echo "code: ".$error[ 'code']."<br />";
+				echo "message: ".$error[ 'message']."<br />";
+			}
+		}
+	}
 
 	// Close SQL database connection
 	sqlsrv_close ($conn);
 
-	//header("Location: /"); /* Redirect browser to home page */
+	header("Location: /"); /* Redirect browser to home page */
  
 ?>
