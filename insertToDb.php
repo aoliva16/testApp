@@ -46,26 +46,11 @@
 					'" . $expenseNote . "')";
 
 	// Run query
-	//$sqlQueryStatus = sqlsrv_query($conn, $tsql);
-
-	echo $tsql;
-
-	/*
-	// Check for errors in SQL query
-	if( $sqlQueryStatus === false ) {
-		if( ($errors = sqlsrv_errors() ) != null) {
-			foreach( $errors as $error ) {
-				echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
-				echo "code: ".$error[ 'code']."<br />";
-				echo "message: ".$error[ 'message']."<br />";
-			}
-		}
-	}
-	*/
+	$sqlQueryStatus = sqlsrv_query($conn, $tsql);
 
 	// Close SQL database connection
 	sqlsrv_close ($conn);
 
-	//header("Location: /"); /* Redirect browser to home page */
+	header("Location: /"); /* Redirect browser to home page */
  
 ?>
