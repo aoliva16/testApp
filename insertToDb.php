@@ -46,8 +46,11 @@
 					  . $expenseNote .')';
 
 	// Run query
-	$sqlQueryStatus = sqlsrv_query($conn, $tsql);
+	//$sqlQueryStatus = sqlsrv_query($conn, $tsql);
 
+	echo $tsql
+
+	/*
 	// Check for errors in SQL query
 	if( $sqlQueryStatus === false ) {
 		if( ($errors = sqlsrv_errors() ) != null) {
@@ -58,10 +61,11 @@
 			}
 		}
 	}
+	*/
 
 	// Close SQL database connection
 	sqlsrv_close ($conn);
 
-	header("Location: /"); /* Redirect browser to home page */
+	//header("Location: /"); /* Redirect browser to home page */
  
 ?>
