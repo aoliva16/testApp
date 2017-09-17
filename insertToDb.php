@@ -27,12 +27,12 @@
 
 	$tsql="SELECT CATEGORY FROM Expense_Categories";
 
-	echo $expenseDay
-	echo $expenseMonth
-	echo $expenseYear
-	echo $expenseAmoun
-	echo $expenseNote
-	echo $expenseCategory
+	echo $expenseDay;
+	echo $expenseMonth;
+	echo $expenseYear;
+	echo $expenseAmoun;
+	echo $expenseNote;
+	echo $expenseCategory;
 
 	// Close SQL database connection
 	sqlsrv_close ($conn);
