@@ -2,6 +2,7 @@
 <html>
 <head>
 <title> Carlos' Expense Input Tool </title>
+<style>.error {color: #FF0000;}</style>
 </head>
 <body>
 <h3> Input Expense</h3>
@@ -17,7 +18,7 @@
 	$tsql="SELECT CATEGORY FROM Expense_Categories";
 	$expenseCategories= sqlsrv_query($conn, $tsql);
 
-	// Populate dropdown menu 
+	// Populate dropdown menu options 
 	$options = '';
 	while($row = sqlsrv_fetch_array($expenseCategories)) {
 		$options .="<option>" . $row['CATEGORY'] . "</option>";
@@ -27,6 +28,9 @@
 	sqlsrv_close ($conn);
 ?>
 
+<!-- Define web form. 
+The array $_POST is populated after the HTTP POST method.
+The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 <form action="insertToDb.php" method="post">
 
 	Date:<br>
@@ -45,5 +49,6 @@
 	<br><br>
 	<input type="submit" value="Submit"><br>
 </form>
+
 </body>
 </html>
