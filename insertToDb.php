@@ -18,17 +18,22 @@
 	$conn = ConnectToDabase();
 
 	// Get input variables
-	$expenseDay= ($_POST['expense_day']);
-	$expenseMonth= ($_POST['expense_month']);
-	$expenseYear= ($_POST['expense_year']);
-	$expenseAmount= ($_POST['expense_amount']);
+	$expenseDay= (int) ($_POST['expense_day']);
+	$expenseMonth= (int) ($_POST['expense_month']);
+	$expenseYear= (int) ($_POST['expense_year']);
+	$expenseAmount= (float) ($_POST['expense_amount']);
 	$expenseNote= ($_POST['input_note']);
 	$expenseCategory= ($_POST['expense_category']);
+
+	// Get also expense month name
+	$dateObj= DateTime::createFromFormat('!m', $expenseMonth);
+	$expenseMonthName= $dateObj->format('F'); // March
 
 	$tsql="SELECT CATEGORY FROM Expense_Categories";
 
 	echo $expenseDay;
 	echo $expenseMonth;
+	echo $expenseMonthName;
 	echo $expenseYear;
 	echo $expenseAmount;
 	echo $expenseNote;
