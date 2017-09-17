@@ -21,6 +21,6 @@
 	// Close SQL database connection
 	sqlsrv_close ($conn);
 
-	header("Location: index.php"); /* Redirect browser */
+	header("Location: /"); /* Redirect browser */
  
 ?>
