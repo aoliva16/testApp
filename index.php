@@ -35,6 +35,8 @@ The array $_POST is populated after the HTTP POST method.
 The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 <form action="insertToDb.php" method="post">
 
+	echo $expenseMonth;
+
 	Expense Day (1-31):<br>
 		<input type="text" name="expense_day" required><br>
 
