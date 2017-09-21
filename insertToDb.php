@@ -51,6 +51,10 @@
 	// Close SQL database connection
 	sqlsrv_close ($conn);
 
-	header("Location: /"); /* Redirect browser to home page */
- 
+	// Start session and store previously-selected Expense Month as part of data to carry over after URL redirection
+	session_start();
+	$_SESSION['prevExpenseMonth'] = $expenseMonth;
+
+	/* Redirect browser to home page */
+	header("Location: /"); 
 ?>
