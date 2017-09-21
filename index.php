@@ -87,7 +87,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 
 <h3> Previous Input (if any):</h3>
 <p> Expense Day: <?php echo $prevSelections['prevExpenseDay'] ?> </p>
-<p> Expense Month: <?php echo $prevSelections['prevExpenseDay'] ?> </p>
+<p> Expense Month: <?php echo $prevSelections['prevExpenseMonth'] ?> </p>
 <p> Expense Year: <?php echo $prevSelections['prevExpenseYear'] ?> </p>
 <p> Expense Category: <?php echo $prevSelections['prevExpenseCategory'] ?> </p>
 <p> Expense Amount: <?php echo $prevSelections['prevExpenseAmount'] ?> </p>
