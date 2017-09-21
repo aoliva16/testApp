@@ -31,11 +31,14 @@
 
 	// Get the session data from the previously selected Expense Month, if it exists
 	session_start();
-	if ( !empty( $_SESSION['prevExpenseMonth'] ))
+	if ( !empty( $_SESSION['prevSelections'] ))
 	{ 
-		$prevExpenseMonth = $_SESSION['prevExpenseMonth'];
-		unset ( $_SESSION['prevExpenseMonth'] );
+		$prevSelections = $_SESSION['prevSelections'];
+		unset ( $_SESSION['prevSelections'] );
 	}
+
+	// Extract previously-selected Month
+	$prevExpenseMonth= $prevSelections['prevExpenseMonth'];
 ?>
 
 <!-- Define web form. 
@@ -46,6 +49,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 	Expense Day (1-31):<br>
 		<input type="text" name="expense_day" required><br>
 
+	<!-- Dropdown menu for expense month, remembering previously selected month -->
 	Expense Month:<br>
 	<select name="expense_month">
 		<option value="-1">Month:</option>

@@ -46,14 +46,21 @@
 					'" . $expenseNote . "')";
 
 	// Run query
-	$sqlQueryStatus = sqlsrv_query($conn, $tsql);
+	$sqlQueryStatus= sqlsrv_query($conn, $tsql);
 
 	// Close SQL database connection
 	sqlsrv_close ($conn);
 
-	// Start session and store previously-selected Expense Month as part of data to carry over after URL redirection
+	// Initialize an array of previously-posted info
+	$prevSelections = array();
+
+	// Populate array with key-value pairs
+	$prevSelections['prevExpenseMonth']= $expenseMonth;
+	$prevSelections['prevExpenseCategory']= $expenseCategory;
+
+	// Start session and store previously-selected data as part of info to carry over after URL redirection
 	session_start();
-	$_SESSION['prevExpenseMonth'] = $expenseMonth;
+	$_SESSION['prevSelections'] = $expenseMonth;
 
 	/* Redirect browser to home page */
 	header("Location: /"); 
