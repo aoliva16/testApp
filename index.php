@@ -10,7 +10,6 @@
 <?php
 	
 	require 'connectToDatabase.php';
-	require 'insertToDb.php';
 
 	// Connect to Azure SQL Database
 	$conn = ConnectToDabase();
