@@ -29,7 +29,13 @@
 	// Close SQL database connection
 	sqlsrv_close ($conn);
 
-	echo $expenseMonth;
+	// Get the session data from the previously selected Expense Month, if it exists
+	session_start();
+	if ( !empty( $_SESSION['prevExpenseMonth'] ))
+	{ 
+		$prevExpenseMonth = $_SESSION['prevExpenseMonth'];
+		unset ( $_SESSION['prevExpenseMonth'] );
+	}
 ?>
 
 <!-- Define web form. 
@@ -43,18 +49,18 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 	Expense Month:<br>
 	<select name="expense_month">
 		<option value="-1">Month:</option>
-		<option value="01"<?php echo $_SESSION['prevExpenseMonth'] == 1 ? 'selected="selected"' : ''; ?>>Jan</option>
-		<option value="02"<?php echo $_SESSION['prevExpenseMonth'] == 2 ? 'selected="selected"' : ''; ?>>Feb</option>
-		<option value="03"<?php echo $_SESSION['prevExpenseMonth'] == 3 ? 'selected="selected"' : ''; ?>>Mar</option>
-		<option value="04"<?php echo $_SESSION['prevExpenseMonth'] == 4 ? 'selected="selected"' : ''; ?>>Apr</option>
-		<option value="05"<?php echo $_SESSION['prevExpenseMonth'] == 5 ? 'selected="selected"' : ''; ?>>May</option>
-		<option value="06"<?php echo $_SESSION['prevExpenseMonth'] == 6 ? 'selected="selected"' : ''; ?>>Jun</option>
-		<option value="07"<?php echo $_SESSION['prevExpenseMonth'] == 7 ? 'selected="selected"' : ''; ?>>Jul</option>
-		<option value="08"<?php echo $_SESSION['prevExpenseMonth'] == 8 ? 'selected="selected"' : ''; ?>>Aug</option>
-		<option value="09"<?php echo $_SESSION['prevExpenseMonth'] == 9 ? 'selected="selected"' : ''; ?>>Sep</option>
-		<option value="10"<?php echo $_SESSION['prevExpenseMonth'] == 10 ? 'selected="selected"' : ''; ?>>Oct</option>
-		<option value="11"<?php echo $_SESSION['prevExpenseMonth'] == 11 ? 'selected="selected"' : ''; ?>>Nov</option>
-		<option value="12"<?php echo $_SESSION['prevExpenseMonth'] == 12 ? 'selected="selected"' : ''; ?>>Dec</option>
+		<option value="01"<?php echo $prevExpenseMonth == 1 ? 'selected="selected"' : ''; ?>>Jan</option>
+		<option value="02"<?php echo $prevExpenseMonth == 2 ? 'selected="selected"' : ''; ?>>Feb</option>
+		<option value="03"<?php echo $prevExpenseMonth == 3 ? 'selected="selected"' : ''; ?>>Mar</option>
+		<option value="04"<?php echo $prevExpenseMonth == 4 ? 'selected="selected"' : ''; ?>>Apr</option>
+		<option value="05"<?php echo $prevExpenseMonth == 5 ? 'selected="selected"' : ''; ?>>May</option>
+		<option value="06"<?php echo $prevExpenseMonth == 6 ? 'selected="selected"' : ''; ?>>Jun</option>
+		<option value="07"<?php echo $prevExpenseMonth == 7 ? 'selected="selected"' : ''; ?>>Jul</option>
+		<option value="08"<?php echo $prevExpenseMonth == 8 ? 'selected="selected"' : ''; ?>>Aug</option>
+		<option value="09"<?php echo $prevExpenseMonth == 9 ? 'selected="selected"' : ''; ?>>Sep</option>
+		<option value="10"<?php echo $prevExpenseMonth == 10 ? 'selected="selected"' : ''; ?>>Oct</option>
+		<option value="11"<?php echo $prevExpenseMonth == 11 ? 'selected="selected"' : ''; ?>>Nov</option>
+		<option value="12"<?php echo $prevExpenseMonth == 12 ? 'selected="selected"' : ''; ?>>Dec</option>
 	</select><br>
 
 	Expense Year (YYYY):<br>
