@@ -86,13 +86,13 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 </form>
 
 <h3> Previous Input (if any):</h3>
-<p> Expense Day: <?php echo $_SESSION['prevSelections']['prevExpenseDay'] ?> </p>
-<p> Expense Month: <?php echo $_SESSION['prevSelections']['prevExpenseDay'] ?> </p>
-<p> Expense Year: <?php echo $_SESSION['prevSelections']['prevExpenseYear'] ?> </p>
-<p> Expense Category: <?php echo $_SESSION['prevSelections']['prevExpenseCategory'] ?> </p>
-<p> Expense Amount: <?php echo $_SESSION['prevSelections']['prevExpenseAmount'] ?> </p>
-<p> Expense Note: <?php echo $_SESSION['prevSelections']['prevExpenseNote'] ?> </p>
-<p> <?php echo $_SESSION['prevSelections']['errorMessage'] ?> </p>
+<p> Expense Day: <?php echo $prevSelections['prevExpenseDay'] ?> </p>
+<p> Expense Month: <?php echo $prevSelections['prevExpenseDay'] ?> </p>
+<p> Expense Year: <?php echo $prevSelections['prevExpenseYear'] ?> </p>
+<p> Expense Category: <?php echo $prevSelections['prevExpenseCategory'] ?> </p>
+<p> Expense Amount: <?php echo $prevSelections['prevExpenseAmount'] ?> </p>
+<p> Expense Note: <?php echo $prevSelections['prevExpenseNote'] ?> </p>
+<p> <?php echo $prevSelections['errorMessage'] ?> </p>
 
 </body>
 </html>
