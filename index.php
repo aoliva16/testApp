@@ -9,9 +9,8 @@
 
 <?php
 	
-	/* Note about variable scope in PHP: file boundaries do NOT separate scope */
-
-	require 'ConnectToDatabase.php';
+	require 'connectToDatabase.php'
+	require 'insertToDb.php';
 
 	// Connect to Azure SQL Database
 	$conn = ConnectToDabase();
