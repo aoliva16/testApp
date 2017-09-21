@@ -25,12 +25,21 @@
 	$expenseNote= ($_POST['input_note']);
 	$expenseCategory= ($_POST['expense_category']);
 
-	// Get also expense month name
-	$dateObj= DateTime::createFromFormat('!m', $expenseMonth);
-	$expenseMonthName= $dateObj->format('F'); // March
+	// Create a DateTime object based on inputted data
+	$dateObj= DateTime::createFromFormat('Y-m-d', $expenseYear . "-" . $expenseMonth . "-" . $expenseDay);
+
+	// Get the name of the month (e.g. January) of this expense
+	$expenseMonthName= $dateObj->format('F');
+
+	// Get the day of the week (e.g. Tuesday) of this expense
+	$expenseDayOfWeekNum= $dateObj->format('w');
+	$days = array('Sunday', 'Monday', 'Tuesday', 'Wednesday','Thursday','Friday', 'Saturday');
+	$expenseDayOfWeek = $days[$expenseDayOfWeekNum];
+
 
 	// Build SQL query to insert new expense data into SQL database
 	$tsql="INSERT INTO Expenses (ExpenseDay,
+								 ExpenseDayOfWeek,
 							     ExpenseMonth,
 								 ExpenseMonthName,
 								 ExpenseYear,
@@ -38,6 +47,7 @@
 								 ExpenseAmount,
 								 Notes)
 			VALUES ('" . $expenseDay . "', 
+					'" . $expenseDayOfWeek . "', 
 					'" . $expenseMonth . "', 
 					'" . $expenseMonthName . "', 
 					'" . $expenseYear . "', 
