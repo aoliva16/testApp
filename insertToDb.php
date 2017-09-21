@@ -70,7 +70,7 @@
 
 	// Start session and store previously-selected data as part of info to carry over after URL redirection
 	session_start();
-	$_SESSION['prevSelections'] = $expenseMonth;
+	$_SESSION['prevSelections'] = $prevSelections;
 
 	/* Redirect browser to home page */
 	header("Location: /"); 
