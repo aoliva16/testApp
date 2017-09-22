@@ -68,7 +68,8 @@
 
 
 		// Build SQL query to insert new expense data into SQL database
-		$tsql="INSERT INTO Expenses (ExpenseDay,
+		$tsql="INSERT INTO Expenses (UserName,
+										ExpenseDay,
 										ExpenseDayOfWeek,
 										ExpenseMonth,
 										ExpenseMonthName,
@@ -76,7 +77,8 @@
 										ExpenseCategory,
 										ExpenseAmount,
 										Notes)
-				VALUES ('" . $expenseDay . "', 
+				VALUES ('" . $userEmail . "',
+						'" . $expenseDay . "', 
 						'" . $expenseDayOfWeek . "', 
 						'" . $expenseMonth . "', 
 						'" . $expenseMonthName . "', 

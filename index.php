@@ -36,7 +36,6 @@
 			$userEmail= $claim->val;
 		}
 	}
-	echo $userEmail;
 
 	// Get the session data from the previously selected Expense Month, if it exists
 	session_start();
