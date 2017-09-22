@@ -83,7 +83,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 	<input type="submit" value="Submit"><br>
 </form>
 
-<h3> <?php echo $_SERVER['X-MS-TOKEN-AAD-ID-TOKEN']; ?> </h3>
+<h3> <?php echo $_SERVER['MS_CLIENT_PRINCIPAL']; ?> </h3>
 
 <h3> Previous Input (if any):</h3>
 <p> Expense Day: <?php echo $prevSelections['prevExpenseDay'] ?> </p>
