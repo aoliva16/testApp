@@ -75,6 +75,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 		<select name="expense_category">
 			<?php echo " . $options . " ?>
 		</select><br>
+		<br>
 
 	Notes (optional):<br>
 		<input type="text" name="input_note" ><br>
