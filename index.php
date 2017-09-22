@@ -28,7 +28,7 @@
 	sqlsrv_close ($conn);
 
 	// Get the authentication claims stored in the Token Store after user logins using Azure Active Directory
-	$claims= $_SERVER['MS_CLIENT_PRINCIPAL'];
+	$claims= json_decode($_SERVER['MS_CLIENT_PRINCIPAL']);
 	echo $claims;
 	/*
 	foreach($claims as $claim)
