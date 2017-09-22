@@ -28,21 +28,20 @@
 	sqlsrv_close ($conn);
 
 	// Get the authentication claims stored in the Token Store after user logins using Azure Active Directory
-	$claims= json_decode($_SERVER['MS_CLIENT_PRINCIPAL']);
-	echo $claims;
-	/*
+	$claims= json_decode($_SERVER['MS_CLIENT_PRINCIPAL'])->claims;
 	foreach($claims as $claim)
 	{
 		echo $claim->typ;
 		echo $claim->val;
 		
+		/*
 		if ( $claim->typ == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress" )
 		{
 			$userEmail= $claim->val;
 		}
-		
+		*/
 	}
-	*/
+	
 
 	// Get the session data from the previously selected Expense Month, if it exists
 	session_start();
