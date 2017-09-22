@@ -67,7 +67,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 	</select><br>
 
 	Expense Year (YYYY):<br>
-		<input type="text" name="expense_year" value="<?php if(!isempty($prevExpenseYear)) echo $prevExpenseYear;  ?>" required><br>
+		<input type="text" name="expense_year" value="<?php echo $prevExpenseYear;  ?>" required><br>
  
 	Expense Amount (US$):<br>
 		<input type="" name="expense_amount" required><br>
