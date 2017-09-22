@@ -29,6 +29,8 @@
 
 	// Get the authentication claims stored in the Token Store after user logins using Azure Active Directory
 	$claims= $_SERVER['MS_CLIENT_PRINCIPAL']['claims'];
+	echo $claims;
+	/*
 	foreach($claims as $claim)
 	{
 		echo $claim->typ;
@@ -40,6 +42,7 @@
 		}
 		*/
 	}
+	*/
 
 	// Get the session data from the previously selected Expense Month, if it exists
 	session_start();
