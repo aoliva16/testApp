@@ -90,7 +90,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 <p> Expense Category: <?php echo $prevSelections['prevExpenseCategory'] ?> </p>
 <p> Expense Amount: <?php echo $prevSelections['prevExpenseAmount'] ?> </p>
 <p> Expense Note: <?php echo $prevSelections['prevExpenseNote'] ?> </p>
-<p> <?php echo $prevSelections['errorMessage'] ?> </p>
+<p> <span class="error"> <?php echo $prevSelections['errorMessage'] ?> </scale> </p>
 
 </body>
 </html>
