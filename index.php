@@ -15,7 +15,7 @@
 	$conn = ConnectToDabase();
 
 	// Get data for expense categories
-	$tsql="SELECT CATEGORY FROM Expense_Categories ORDER BY CATEGORY DESC";
+	$tsql="SELECT CATEGORY FROM Expense_Categories ORDER BY CATEGORY ASC";
 	$expenseCategories= sqlsrv_query($conn, $tsql);
 
 	// Populate dropdown menu options 
