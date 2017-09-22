@@ -66,6 +66,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 		<option value="12"<?php echo $prevExpenseMonth == 12 ? 'selected="selected"' : ''; ?>>Dec</option>
 	</select><br>
 
+	<!-- Text input for year, remembering previously selected year -->
 	Expense Year (YYYY):<br>
 		<input type="text" name="expense_year" value="<?php echo $prevExpenseYear;  ?>" required><br>
  
