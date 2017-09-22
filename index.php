@@ -31,10 +31,14 @@
 	$claims= $_SERVER['MS_CLIENT_PRINCIPAL']['claims'];
 	foreach($claims as $claim)
 	{
+		echo $claim->typ;
+		echo $claim->val;
+		/*
 		if ( $claim->typ == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress" )
 		{
 			$userEmail= $claim->val;
 		}
+		*/
 	}
 
 	// Get the session data from the previously selected Expense Month, if it exists
