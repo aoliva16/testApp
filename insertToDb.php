@@ -7,6 +7,15 @@
 	  $data = htmlspecialchars($data);
 	  return $data;
 	}
+
+	// Define function to check that amount
+	function validateTwoDecimals($number)
+	{
+	   if(preg_match('/^[0-9]+(\.[0-9]{1,2})?$/', $number))
+		 return true;
+	   else
+		 return false;
+	}
  
 	// PHP script used to connect to backend Azure SQL database
 	require 'ConnectToDatabase.php';
@@ -14,10 +23,10 @@
 	// Start session for this particular PHP script execution.
 	session_start();
 
-	// Define variables and set to empty values
+	// Define ariables and set to empty values
 	$expenseDay = $expenseMonth = $expenseYear = $expenseAmount = $expenseNote = $expenseCategory = $errorMessage = NULL;
 
-// Get input variables
+	// Get input variables
 	$expenseDay= (int) parse_input($_POST['expense_day']);
 	$expenseMonth= (int) parse_input($_POST['expense_month']);
 	$expenseYear= (int) parse_input($_POST['expense_year']);
@@ -35,6 +44,10 @@
 	// Check date validity
 	$isValidDate= checkdate($expenseMonth, $expenseDay, $expenseYear);
 	if (!$isValidDate) {$errorMessage= "Error: Invalid Date"; $anyErrors= TRUE;}
+
+	// Check that the expense amount input has maximum of 2 decimal places (check against string input, not the float parsed input)
+	$isValidExpenseAmount= validateTwoDecimals(parse_input($_POST['expense_amount']));
+	if (!$isValidExpenseAmount) {$errorMessage= "Error: Invalid Expense Amount"; $anyErrors= TRUE;}
 
 	// Only input information into database if there are no errors
 	if ( !$anyErrors ) 
