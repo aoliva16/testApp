@@ -35,12 +35,12 @@
 	{
 		echo $claim->typ;
 		echo $claim->val;
-		/*
+		
 		if ( $claim->typ == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress" )
 		{
 			$userEmail= $claim->val;
 		}
-		*/
+		
 	}
 	*/
 
