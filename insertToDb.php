@@ -1,14 +1,15 @@
 <?php
 
-	// Define function to parse basic input from form
-	function parse_input($data) {
-	  $data = trim($data);
-	  $data = stripslashes($data);
-	  $data = htmlspecialchars($data);
-	  return $data;
+	// Define function to handle basic user input
+	function parse_input($data) 
+	{
+		$data = trim($data);
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
 	}
 
-	// Define function to check that amount
+	// Define function to check that inputted expense number has a maximum of 2 decimal places
 	function validateTwoDecimals($number)
 	{
 	   if(preg_match('/^[0-9]+(\.[0-9]{1,2})?$/', $number))
@@ -45,7 +46,7 @@
 		}
 	}
 
-	////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////
 	//////////////////// INPUT VALIDATION /////////////////
 	///////////////////////////////////////////////////////
 
@@ -59,6 +60,11 @@
 	// Check that the expense amount input has maximum of 2 decimal places (check against string input, not the float parsed input)
 	$isValidExpenseAmount= validateTwoDecimals(parse_input($_POST['expense_amount']));
 	if (!$isValidExpenseAmount) {$errorMessage= "Error: Invalid Expense Amount"; $anyErrors= TRUE;}
+
+
+	///////////////////////////////////////////////////////
+	////////// INPUT PARSING AND WRITE TO SQL DB //////////
+	///////////////////////////////////////////////////////
 
 	// Only input information into database if there are no errors
 	if ( !$anyErrors ) 
@@ -77,26 +83,27 @@
 		// Connect to Azure SQL Database
 		$conn = ConnectToDabase();
 
-
 		// Build SQL query to insert new expense data into SQL database
-		$tsql="INSERT INTO Expenses (UserName,
-										ExpenseDay,
-										ExpenseDayOfWeek,
-										ExpenseMonth,
-										ExpenseMonthName,
-										ExpenseYear,
-										ExpenseCategory,
-										ExpenseAmount,
-										Notes)
-				VALUES ('" . $userEmail . "',
-						'" . $expenseDay . "', 
-						'" . $expenseDayOfWeek . "', 
-						'" . $expenseMonth . "', 
-						'" . $expenseMonthName . "', 
-						'" . $expenseYear . "', 
-						'" . $expenseCategory . "', 
-						'" . $expenseAmount . "', 
-						'" . $expenseNote . "')";
+		$tsql=
+		"INSERT INTO Expenses (	
+				UserName,
+				ExpenseDay,
+				ExpenseDayOfWeek,
+				ExpenseMonth,
+				ExpenseMonthName,
+				ExpenseYear,
+				ExpenseCategory,
+				ExpenseAmount,
+				Notes)
+		VALUES ('" . $userEmail . "',
+				'" . $expenseDay . "', 
+				'" . $expenseDayOfWeek . "', 
+				'" . $expenseMonth . "', 
+				'" . $expenseMonthName . "', 
+				'" . $expenseYear . "', 
+				'" . $expenseCategory . "', 
+				'" . $expenseAmount . "', 
+				'" . $expenseNote . "')";
 
 		// Run query
 		$sqlQueryStatus= sqlsrv_query($conn, $tsql);
