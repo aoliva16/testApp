@@ -22,14 +22,6 @@
 
 <body>
 
-<div class="intro">
-
-	<h3> Input Expense Form </h3>
-
-	<!-- Display redundant error message on top of webpage if there is an error -->
-	<p> <span class="error"> <?php echo $prevSelections['errorMessage'] ?> </scale> </p>
-</div>
-
 <?php
 	
 	require 'connectToDatabase.php';
@@ -62,6 +54,15 @@
 	$prevExpenseMonth= $prevSelections['prevExpenseMonth'];
 	$prevExpenseYear= $prevSelections['prevExpenseYear'];
 ?>
+
+<div class="intro">
+
+	<h3> Input Expense Form </h3>
+
+	<!-- Display redundant error message on top of webpage if there is an error -->
+	<p> <span class="error"> <?php echo $prevSelections['errorMessage'] ?> </scale> </p>
+
+</div>
 
 <!-- Define web form. 
 The array $_POST is populated after the HTTP POST method.
