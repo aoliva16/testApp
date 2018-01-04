@@ -7,41 +7,18 @@
 	<style>
 		.error {color: #FF0000;}
 
-		input[type=text], input[type=url], input[type=email], input[type=password], input[type=tel] {
-		  -webkit-appearance: none; -moz-appearance: none;
+		input[type=text], select {
+		  -webkit-appearance: none; /*Removes default chrome and safari style*/
+		  -moz-appearance: none; /* Removes Default Firefox style*/
 		  display: block;
 		  margin: 0;
-		  width: 100%; height: 40px;
-		  line-height: 40px; font-size: 17px;
+		  width: 100%; /*Width of select dropdown to give space for arrow image*/
+		  height: 40px;
+		  line-height: 40px; 
+		  font-size: 17px;
 		  border: 1px solid #bbb;
 		}
 
-		button[type=submit] {
-		 -webkit-appearance: none; -moz-appearance: none;
-		 display: block;
-		 margin: 1.5em 0;
-		 font-size: 1em; line-height: 2.5em;
-		 color: #333;
-		 font-weight: bold;
-		 height: 2.5em; width: 100%;
-		 background: #fdfdfd; background: -moz-linear-gradient(top, #fdfdfd 0%, #bebebe 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#bebebe)); background: -webkit-linear-gradient(top, #fdfdfd 0%,#bebebe 100%); background: -o-linear-gradient(top, #fdfdfd 0%,#bebebe 100%); background: -ms-linear-gradient(top, #fdfdfd 0%,#bebebe 100%); background: linear-gradient(to bottom, #fdfdfd 0%,#bebebe 100%);
-		 border: 1px solid #bbb;
-		 -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
-		}
-
-		select {
-			border: 0 !important;  /*Removes border*/
-			-webkit-appearance: none;  /*Removes default chrome and safari style*/
-			-moz-appearance: none; /* Removes Default Firefox style*/
-			background: #0088cc url(img/select-arrow.png) no-repeat 90% center;
-			width: 100px; /*Width of select dropdown to give space for arrow image*/
-			text-indent: 0.01px; /* Removes default arrow from firefox*/
-			text-overflow: "";  /*Removes default arrow from firefox*/ /*My custom style for fonts*/
-			color: #FFF;
-			border-radius: 15px;
-			padding: 5px;
-			box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);
-		}
 	</style>
 </head>
 
