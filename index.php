@@ -16,10 +16,17 @@
 		  border: 1px solid #bbb;
 		}
 
-		div {
-			border-radius: 5px;
-			background-color: #f2f2f2;
-			padding: 20px;
+		button[type=submit] {
+		 -webkit-appearance: none; -moz-appearance: none;
+		 display: block;
+		 margin: 1.5em 0;
+		 font-size: 1em; line-height: 2.5em;
+		 color: #333;
+		 font-weight: bold;
+		 height: 2.5em; width: 100%;
+		 background: #fdfdfd; background: -moz-linear-gradient(top, #fdfdfd 0%, #bebebe 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#bebebe)); background: -webkit-linear-gradient(top, #fdfdfd 0%,#bebebe 100%); background: -o-linear-gradient(top, #fdfdfd 0%,#bebebe 100%); background: -ms-linear-gradient(top, #fdfdfd 0%,#bebebe 100%); background: linear-gradient(to bottom, #fdfdfd 0%,#bebebe 100%);
+		 border: 1px solid #bbb;
+		 -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
 		}
 	</style>
 </head>
@@ -91,7 +98,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 		<input type="text" name="expense_year" value="<?php echo $prevExpenseYear;  ?>" required><br>
  
 	Expense Amount (US$):<br>
-		<input type="" name="expense_amount" required><br>
+		<input type="text" name="expense_amount" required><br>
 
 	Expense Category:<br>
 		<select name="expense_category">
