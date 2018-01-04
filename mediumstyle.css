@@ -1,4 +1,9 @@
-﻿h3 {
+﻿/* test */
+body {
+    background-color: lightgreen
+}
+
+h3 {
     font-size: 16px;
 }
 

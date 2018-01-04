@@ -1,4 +1,9 @@
-﻿input[type=submit] {
+﻿/* test */
+body {
+    background-color: lightgoldenrodyellow
+}
+
+input[type=submit] {
     padding: 4px;
     font-size: 12px;
 }
