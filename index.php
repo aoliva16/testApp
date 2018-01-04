@@ -28,6 +28,20 @@
 		 border: 1px solid #bbb;
 		 -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
 		}
+
+		select {
+			border: 0 !important;  /*Removes border*/
+			-webkit-appearance: none;  /*Removes default chrome and safari style*/
+			-moz-appearance: none; /* Removes Default Firefox style*/
+			background: #0088cc url(img/select-arrow.png) no-repeat 90% center;
+			width: 100px; /*Width of select dropdown to give space for arrow image*/
+			text-indent: 0.01px; /* Removes default arrow from firefox*/
+			text-overflow: "";  /*Removes default arrow from firefox*/ /*My custom style for fonts*/
+			color: #FFF;
+			border-radius: 15px;
+			padding: 5px;
+			box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);
+		}
 	</style>
 </head>
 
