@@ -7,14 +7,13 @@
 	<style>
 		.error {color: #FF0000;}
 
-		input[type=text], select {
-			width: 100%;
-			padding: 12px 20px;
-			margin: 8px 0;
-			display: inline-block;
-			border: 1px solid #ccc;
-			border-radius: 4px;
-			box-sizing: border-box;
+		input[type=text], input[type=url], input[type=email], input[type=password], input[type=tel] {
+		  -webkit-appearance: none; -moz-appearance: none;
+		  display: block;
+		  margin: 0;
+		  width: 100%; height: 40px;
+		  line-height: 40px; font-size: 17px;
+		  border: 1px solid #bbb;
 		}
 	</style>
 </head>
