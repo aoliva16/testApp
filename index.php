@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> Carlos' Expense Input Tool </title>
-<style>.error {color: #FF0000;}</style>
+	<title> 
+		Carlos' Expense Input Tool 
+	</title>
+	<style>
+		.error {color: #FF0000;}
+
+		input[type=text], select {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+	</style>
 </head>
+
 <body>
 <h3> Input Expense</h3>
 
