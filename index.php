@@ -12,8 +12,8 @@
 
 	<!-- Include CSS for different screen sizes -->
 	<link rel="stylesheet" type="text/css" href="defaultstyle.css">
-	<!--
 	<link rel="stylesheet" media="screen and (max-width: 1200px) and (min-width: 601px)" href="responsiveform1.css" />
+	<!--
 	<link rel="stylesheet" media="screen and (max-width: 600px) and (min-width: 351px)" href="responsiveform2.css" />
 	<link rel="stylesheet" media="screen and (max-width: 350px)" href="responsiveform3.css" />
 	-->
@@ -67,7 +67,7 @@
 <!-- Define web form. 
 The array $_POST is populated after the HTTP POST method.
 The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
-<div id="formsection">
+<div id="envelope">
 	<form action="insertToDb.php" method="post">
 
 		Expense Day (1-31):<br>
