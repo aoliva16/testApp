@@ -15,6 +15,12 @@
 		  line-height: 40px; font-size: 17px;
 		  border: 1px solid #bbb;
 		}
+
+		div {
+			border-radius: 5px;
+			background-color: #f2f2f2;
+			padding: 20px;
+		}
 	</style>
 </head>
 
