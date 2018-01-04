@@ -35,6 +35,11 @@ header {
     color: aliceblue;
 }
 
+/* Align center the div box for intro header and for any error messages. */
+.intro {
+    text-align: center;
+}
+
 /* Makes responsive fields. Sets size and field alignment.*/
 input[type=text], select {
     margin-bottom: 20px;

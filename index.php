@@ -21,7 +21,14 @@
 </head>
 
 <body>
-<h3> Input Expense</h3>
+
+<div class="intro">
+
+	<h3> Input Expense Form </h3>
+
+	<!-- Display redundant error message on top of webpage if there is an error -->
+	<p> <span class="error"> <?php echo $prevSelections['errorMessage'] ?> </scale> </p>
+</div>
 
 <?php
 	
@@ -102,7 +109,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 	<input type="submit" value="Submit"><br>
 </form>
 
-<h3> Previous Input (if any):</h3>
+<h3> Previous Input (if any) - for verification purposes:</h3>
 <p> Expense Day: <?php echo $prevSelections['prevExpenseDay'] ?> </p>
 <p> Expense Month: <?php echo $prevSelections['prevExpenseMonth'] ?> </p>
 <p> Expense Year: <?php echo $prevSelections['prevExpenseYear'] ?> </p>
