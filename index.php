@@ -4,22 +4,20 @@
 	<title> 
 		Carlos' Expense Input Tool 
 	</title>
+
+
 	<style>
 		.error {color: #FF0000;}
-
-		input[type=text], select {
-		  -webkit-appearance: none; /*Removes default chrome and safari style*/
-		  -moz-appearance: none; /* Removes Default Firefox style*/
-		  display: block;
-		  margin: 0;
-		  width: 100%; /*Width of select dropdown to give space for arrow image*/
-		  height: 40px;
-		  line-height: 40px; 
-		  font-size: 17px;
-		  border: 1px solid #bbb;
-		}
-
 	</style>
+
+	<!-- Include CSS for different screen sizes -->
+	<link rel="stylesheet" type="text/css" href="defaultstyle.css">
+	<!--
+	<link rel="stylesheet" media="screen and (max-width: 1200px) and (min-width: 601px)" href="responsiveform1.css" />
+	<link rel="stylesheet" media="screen and (max-width: 600px) and (min-width: 351px)" href="responsiveform2.css" />
+	<link rel="stylesheet" media="screen and (max-width: 350px)" href="responsiveform3.css" />
+	-->
+
 </head>
 
 <body>
