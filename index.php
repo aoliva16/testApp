@@ -57,10 +57,10 @@
 
 <div class="intro">
 
-	<h3> Input Expense Form </h3>
+	<h2> Input Expense Form </h2>
 
 	<!-- Display redundant error message on top of webpage if there is an error -->
-	<p> <span class="error"> <?php echo $prevSelections['errorMessage'] ?> </scale> </p>
+	<h3> <span class="error"> <?php echo $prevSelections['errorMessage'] ?> </scale> </h3>
 
 </div>
 
