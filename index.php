@@ -13,10 +13,8 @@
 	<!-- Include CSS for different screen sizes -->
 	<link rel="stylesheet" type="text/css" href="defaultstyle.css">
 	<link rel="stylesheet" media="screen and (max-width: 1200px) and (min-width: 601px)" href="bigstyle.css" />
-	<!--
-	<link rel="stylesheet" media="screen and (max-width: 600px) and (min-width: 351px)" href="responsiveform2.css" />
-	<link rel="stylesheet" media="screen and (max-width: 350px)" href="responsiveform3.css" />
-	-->
+	<link rel="stylesheet" media="screen and (max-width: 600px) and (min-width: 351px)" href="mediumstyle.css" />
+	<link rel="stylesheet" media="screen and (max-width: 350px)" href="smallstyle.css" />
 
 </head>
 
