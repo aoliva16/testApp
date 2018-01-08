@@ -3,30 +3,38 @@ body {
     background-color: lightgreen
 }
 
-h3 {
-    font-size: 16px;
+form {
+    border: 3px solid #f1f1f1;
 }
 
-p {
-    font-size: 14px;
+/* Align center the div box for intro header and for any error messages. */
+.intro {
+    text-align: center;
 }
 
-label {
-    font-size: 12px;
-}
-
-input[type=submit] {
-    padding: 5px;
+header {
 }
 
 input[type=text], input[type=number], select {
-    padding: 8px;
+    width: 100%;
+    padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
+    border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
+/**/
 .container {
-    width: 80%;
-    margin: 10px 30% 10px 11%;
+    padding: 16px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
 }
