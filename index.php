@@ -68,12 +68,12 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 <div id="envelope">
 	<form action="insertToDb.php" method="post">
 
-		<label><b>Expense Day (1-31):</b></label>
+		<label>Expense Day (1-31):</label>
 		<input type="text" name="expense_day" required>
 
 		<!-- Dropdown menu for expense month, remembering previously selected month -->
-		<label><b>Expense Month</b></label>
-		<select name="expense_month" style="font-size:2vw;">
+		<label>Expense Month</label>
+		<select name="expense_month" style="font-size:0.5vw;">
 			<option value="-1">Month:</option>
 			<option value="01"<?php echo $prevExpenseMonth == 1 ? 'selected="selected"' : ''; ?>>Jan</option>
 			<option value="02"<?php echo $prevExpenseMonth == 2 ? 'selected="selected"' : ''; ?>>Feb</option>
@@ -90,18 +90,19 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 		</select><br>
 
 		<!-- Text input for year, remembering previously selected year -->
-		<label><b>Expense Year (YYYY):</b></label>
+		<label>Expense Year (YYYY):</label>
 		<input type="text" name="expense_year" value="<?php echo $prevExpenseYear;  ?>" required><br>
  
-		<label><b>Expense Amount (US$):</b></label>
+		<label>Expense Amount (US$):</label>
 		<input type="text" name="expense_amount" required><br>
 
-		<label><b>Expense Category:</b></label>
-		<select name="expense_category" style="font-size:2vw;">
+		<label>Expense Category:</label>
+		<select name="expense_category" style="font-size:0.5vw;">
+			<option value="-1">Category:</option>
 			<?php echo " . $options . " ?>
 		</select><br>
 
-		<label><b>Notes (optional):</b></label>
+		<label>Notes (optional):</label>
 		<input type="text" name="input_note" ><br>
 
 		<button type="submit">Submit</button>
