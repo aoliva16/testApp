@@ -34,7 +34,7 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
-input[type=submit] {
+button {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -44,20 +44,6 @@ input[type=submit] {
     width: 100%;
 }
 
-#submit:hover {
-    background-color: black;
-}
-
-textarea {
-    width: 100%;
-    padding: 15px;
-    margin-top: 10px;
-    border: 1px solid #7ac9b7;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    resize: none;
-}
-
-input[type=text]:focus, textarea:focus {
-    border-color: #4697e4;
+button:hover {
+    opacity: 0.8;
 }
