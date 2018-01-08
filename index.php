@@ -68,7 +68,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 	<form action="insertToDb.php" method="post">
 
 		<label>Expense Day (1-31):</label>
-		<input type="text" name="expense_day" required>
+		<input type="number" step="1" name="expense_day" required>
 
 		<!-- Dropdown menu for expense month, remembering previously selected month -->
 		<label>Expense Month</label>
@@ -90,10 +90,10 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 
 		<!-- Text input for year, remembering previously selected year -->
 		<label>Expense Year (YYYY):</label>
-		<input type="text" name="expense_year" value="<?php echo $prevExpenseYear;  ?>" required><br>
+		<input type="number" step="1" name="expense_year" value="<?php echo $prevExpenseYear;  ?>" required><br>
  
 		<label>Expense Amount (US$):</label>
-		<input type="text" name="expense_amount" required><br>
+		<input type="number" step="0.01" name="expense_amount" required><br>
 
 		<label>Expense Category:</label>
 		<select name="expense_category">
