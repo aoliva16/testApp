@@ -73,7 +73,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 
 		<!-- Dropdown menu for expense month, remembering previously selected month -->
 		Expense Month:<br>
-		<select name="expense_month" style="font-size:30px;">
+		<select name="expense_month" style="font-size:5vw;">
 			<option value="-1">Month:</option>
 			<option value="01"<?php echo $prevExpenseMonth == 1 ? 'selected="selected"' : ''; ?>>Jan</option>
 			<option value="02"<?php echo $prevExpenseMonth == 2 ? 'selected="selected"' : ''; ?>>Feb</option>
@@ -97,7 +97,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 			<input type="text" name="expense_amount" required><br>
 
 		Expense Category:<br>
-			<select name="expense_category" style="font-size:30px;">
+			<select name="expense_category" style="font-size:5vw;">
 				<?php echo " . $options . " ?>
 			</select><br>
 			<br>
