@@ -68,12 +68,12 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 <div id="envelope">
 	<form action="insertToDb.php" method="post">
 
-		Expense Day (1-31):<br>
-			<input type="text" name="expense_day" required><br>
+		<label><b>Expense Day (1-31):</b></label>
+		<input type="text" name="expense_day" required>
 
 		<!-- Dropdown menu for expense month, remembering previously selected month -->
-		Expense Month:<br>
-		<select name="expense_month" style="font-size:5vw;">
+		<label><b>Expense Month</b></label>
+		<select name="expense_month" style="font-size:2vw;">
 			<option value="-1">Month:</option>
 			<option value="01"<?php echo $prevExpenseMonth == 1 ? 'selected="selected"' : ''; ?>>Jan</option>
 			<option value="02"<?php echo $prevExpenseMonth == 2 ? 'selected="selected"' : ''; ?>>Feb</option>
@@ -90,23 +90,21 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 		</select><br>
 
 		<!-- Text input for year, remembering previously selected year -->
-		Expense Year (YYYY):<br>
-			<input type="text" name="expense_year" value="<?php echo $prevExpenseYear;  ?>" required><br>
+		<label><b>Expense Year (YYYY):</b></label>
+		<input type="text" name="expense_year" value="<?php echo $prevExpenseYear;  ?>" required><br>
  
-		Expense Amount (US$):<br>
-			<input type="text" name="expense_amount" required><br>
+		<label><b>Expense Amount (US$):</b></label>
+		<input type="text" name="expense_amount" required><br>
 
-		Expense Category:<br>
-			<select name="expense_category" style="font-size:5vw;">
-				<?php echo " . $options . " ?>
-			</select><br>
-			<br>
+		<label><b>Expense Category:</b></label>
+		<select name="expense_category" style="font-size:2vw;">
+			<?php echo " . $options . " ?>
+		</select><br>
 
-		Notes (optional):<br>
-			<input type="text" name="input_note" ><br>
+		<label><b>Notes (optional):</b></label>
+		<input type="text" name="input_note" ><br>
 
-		<br>
-		<input type="submit" value="Submit"><br>
+		<button type="submit">Submit</button>
 	</form>
 </div>
 

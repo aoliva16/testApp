@@ -5,27 +5,13 @@
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto Slab', serif;
-
-    /* test */
-    background-color: lightgray
-
-}
-
-div#envelope {
-    width: 55%;
-    margin: 10px 30% 10px 25%;
-    padding: 10px 0;
-    border: 2px solid gray;
-    border-radius: 10px;
-}
-
 form {
-    width: 70%;
-    margin: 4% 15%;
+    border: 3px solid #f1f1f1;
+}
+
+/* Align center the div box for intro header and for any error messages. */
+.intro {
+    text-align: center;
 }
 
 header {
@@ -39,31 +25,23 @@ header {
     color: aliceblue;
 }
 
-/* Align center the div box for intro header and for any error messages. */
-.intro {
-    text-align: center;
-}
-
-/* Makes responsive fields. Sets size and field alignment.*/
 input[type=text], select {
-    margin-bottom: 20px;
-    margin-top: 10px;
     width: 100%;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #7ac9b7;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 input[type=submit] {
-    margin-bottom: 20px;
-    width: 100%;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #7ac9b7;
-    background-color: #4180C5;
-    color: aliceblue;
-    font-size: 15px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
     cursor: pointer;
+    width: 100%;
 }
 
 #submit:hover {
