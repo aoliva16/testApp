@@ -13,10 +13,8 @@
 
 	<!-- Include CSS for different screen sizes -->
 	<link rel="stylesheet" type="text/css" href="defaultstyle.css">
-	<!--
-	<link rel="stylesheet" media="screen and (max-width: 1200px) and (min-width: 351px)" href="mediumstyle.css" />
-	<link rel="stylesheet" media="screen and (max-width: 350px)" href="smallstyle.css" />
-	-->
+	<link rel="stylesheet" media="screen and (max-width: 450px)" href="mediumstyle.css" />
+
 </head>
 
 <body>
@@ -74,7 +72,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 
 		<!-- Dropdown menu for expense month, remembering previously selected month -->
 		<label>Expense Month</label>
-		<select name="expense_month" style="font-size:3vw;">
+		<select name="expense_month">
 			<option value="-1">Month:</option>
 			<option value="01"<?php echo $prevExpenseMonth == 1 ? 'selected="selected"' : ''; ?>>Jan</option>
 			<option value="02"<?php echo $prevExpenseMonth == 2 ? 'selected="selected"' : ''; ?>>Feb</option>
@@ -98,7 +96,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 		<input type="text" name="expense_amount" required><br>
 
 		<label>Expense Category:</label>
-		<select name="expense_category" style="font-size:3vw;">
+		<select name="expense_category">
 			<option value="-1">Category:</option>
 			<?php echo " . $options . " ?>
 		</select><br>

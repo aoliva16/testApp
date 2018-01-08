@@ -23,7 +23,7 @@ input[type=text] {
     padding: 8px;
 }
 
-div#envelope {
+.container {
     width: 80%;
     margin: 10px 30% 10px 11%;
 }
