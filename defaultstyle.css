@@ -27,6 +27,11 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
+/**/
+.container {
+    padding: 16px;
+}
+
 button {
     background-color: #4CAF50;
     color: white;

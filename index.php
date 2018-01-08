@@ -66,47 +66,49 @@
 <!-- Define web form. 
 The array $_POST is populated after the HTTP POST method.
 The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
-<form action="insertToDb.php" method="post">
+<div class="container">
+	<form action="insertToDb.php" method="post">
 
-	<label>Expense Day (1-31):</label>
-	<input type="text" name="expense_day" required>
+		<label>Expense Day (1-31):</label>
+		<input type="text" name="expense_day" required>
 
-	<!-- Dropdown menu for expense month, remembering previously selected month -->
-	<label>Expense Month</label>
-	<select name="expense_month" style="font-size:3vw;">
-		<option value="-1">Month:</option>
-		<option value="01"<?php echo $prevExpenseMonth == 1 ? 'selected="selected"' : ''; ?>>Jan</option>
-		<option value="02"<?php echo $prevExpenseMonth == 2 ? 'selected="selected"' : ''; ?>>Feb</option>
-		<option value="03"<?php echo $prevExpenseMonth == 3 ? 'selected="selected"' : ''; ?>>Mar</option>
-		<option value="04"<?php echo $prevExpenseMonth == 4 ? 'selected="selected"' : ''; ?>>Apr</option>
-		<option value="05"<?php echo $prevExpenseMonth == 5 ? 'selected="selected"' : ''; ?>>May</option>
-		<option value="06"<?php echo $prevExpenseMonth == 6 ? 'selected="selected"' : ''; ?>>Jun</option>
-		<option value="07"<?php echo $prevExpenseMonth == 7 ? 'selected="selected"' : ''; ?>>Jul</option>
-		<option value="08"<?php echo $prevExpenseMonth == 8 ? 'selected="selected"' : ''; ?>>Aug</option>
-		<option value="09"<?php echo $prevExpenseMonth == 9 ? 'selected="selected"' : ''; ?>>Sep</option>
-		<option value="10"<?php echo $prevExpenseMonth == 10 ? 'selected="selected"' : ''; ?>>Oct</option>
-		<option value="11"<?php echo $prevExpenseMonth == 11 ? 'selected="selected"' : ''; ?>>Nov</option>
-		<option value="12"<?php echo $prevExpenseMonth == 12 ? 'selected="selected"' : ''; ?>>Dec</option>
-	</select><br>
+		<!-- Dropdown menu for expense month, remembering previously selected month -->
+		<label>Expense Month</label>
+		<select name="expense_month" style="font-size:3vw;">
+			<option value="-1">Month:</option>
+			<option value="01"<?php echo $prevExpenseMonth == 1 ? 'selected="selected"' : ''; ?>>Jan</option>
+			<option value="02"<?php echo $prevExpenseMonth == 2 ? 'selected="selected"' : ''; ?>>Feb</option>
+			<option value="03"<?php echo $prevExpenseMonth == 3 ? 'selected="selected"' : ''; ?>>Mar</option>
+			<option value="04"<?php echo $prevExpenseMonth == 4 ? 'selected="selected"' : ''; ?>>Apr</option>
+			<option value="05"<?php echo $prevExpenseMonth == 5 ? 'selected="selected"' : ''; ?>>May</option>
+			<option value="06"<?php echo $prevExpenseMonth == 6 ? 'selected="selected"' : ''; ?>>Jun</option>
+			<option value="07"<?php echo $prevExpenseMonth == 7 ? 'selected="selected"' : ''; ?>>Jul</option>
+			<option value="08"<?php echo $prevExpenseMonth == 8 ? 'selected="selected"' : ''; ?>>Aug</option>
+			<option value="09"<?php echo $prevExpenseMonth == 9 ? 'selected="selected"' : ''; ?>>Sep</option>
+			<option value="10"<?php echo $prevExpenseMonth == 10 ? 'selected="selected"' : ''; ?>>Oct</option>
+			<option value="11"<?php echo $prevExpenseMonth == 11 ? 'selected="selected"' : ''; ?>>Nov</option>
+			<option value="12"<?php echo $prevExpenseMonth == 12 ? 'selected="selected"' : ''; ?>>Dec</option>
+		</select><br>
 
-	<!-- Text input for year, remembering previously selected year -->
-	<label>Expense Year (YYYY):</label>
-	<input type="text" name="expense_year" value="<?php echo $prevExpenseYear;  ?>" required><br>
+		<!-- Text input for year, remembering previously selected year -->
+		<label>Expense Year (YYYY):</label>
+		<input type="text" name="expense_year" value="<?php echo $prevExpenseYear;  ?>" required><br>
  
-	<label>Expense Amount (US$):</label>
-	<input type="text" name="expense_amount" required><br>
+		<label>Expense Amount (US$):</label>
+		<input type="text" name="expense_amount" required><br>
 
-	<label>Expense Category:</label>
-	<select name="expense_category" style="font-size:3vw;">
-		<option value="-1">Category:</option>
-		<?php echo " . $options . " ?>
-	</select><br>
+		<label>Expense Category:</label>
+		<select name="expense_category" style="font-size:3vw;">
+			<option value="-1">Category:</option>
+			<?php echo " . $options . " ?>
+		</select><br>
 
-	<label>Notes (optional):</label>
-	<input type="text" name="input_note" ><br>
+		<label>Notes (optional):</label>
+		<input type="text" name="input_note" ><br>
 
-	<button type="submit">Submit</button>
-</form>
+		<button type="submit">Submit</button>
+	</form>
+</div>
 
 <h3> Previous Input (if any) - for verification purposes:</h3>
 <p> Expense Day: <?php echo $prevSelections['prevExpenseDay'] ?> </p>

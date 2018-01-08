@@ -54,7 +54,7 @@
 	$anyErrors= FALSE;
 
 	// Check category validity
-	if ($expenseCategory='-1') {$errorMessage= "Error: Invalid Category Selected"; $anyErrors= TRUE;}
+	if ($expenseCategory == '-1') {$errorMessage= "Error: Invalid Category Selected"; $anyErrors= TRUE;}
 	
 	// Check date validity
 	$isValidDate= checkdate($expenseMonth, $expenseDay, $expenseYear);
