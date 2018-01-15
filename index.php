@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 	<title> 
@@ -14,7 +14,6 @@
 	<!-- Include CSS for different screen sizes -->
 	<link rel="stylesheet" type="text/css" href="defaultstyle.css">
 	<link rel="stylesheet" media="screen and (max-width: 450px)" href="mediumstyle.css" />
-
 </head>
 
 <body>
