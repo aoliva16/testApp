@@ -103,7 +103,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 			<?php echo " . $options . " ?>
 		</select><br>
 
-		<label>Notes (optional):</label>
+		<label>Notes (optional) [no accents or tildes]:</label>
 		<input type="text" name="input_note" ><br>
 
 		<button type="submit">Submit</button>
