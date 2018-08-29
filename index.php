@@ -16,7 +16,6 @@
 
 	<!-- Include CSS for different screen sizes -->
 	<link rel="stylesheet" type="text/css" href="defaultstyle.css">
-	<link rel="stylesheet" media="screen and (max-width: 450px)" href="mediumstyle.css" />
 </head>
 
 <body>
@@ -59,7 +58,7 @@
 	<h2> Input Expense Form </h2>
 
 	<!-- Display redundant error message on top of webpage if there is an error -->
-	<h3> <span class="error"> <?php echo $prevSelections['errorMessage'] ?> </scale> </h3>
+	<h3> <span class="error"> <?php echo $prevSelections['errorMessage'] ?> </span> </h3>
 
 </div>
 
@@ -117,7 +116,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 <p> Expense Category: <?php echo $prevSelections['prevExpenseCategory'] ?> </p>
 <p> Expense Amount: <?php echo $prevSelections['prevExpenseAmount'] ?> </p>
 <p> Expense Note: <?php echo $prevSelections['prevExpenseNote'] ?> </p>
-<p> <span class="error"> <?php echo $prevSelections['errorMessage'] ?> </scale> </p>
+<p> <span class="error"> <?php echo $prevSelections['errorMessage'] ?> </span> </p>
 
 </body>
 </html>
